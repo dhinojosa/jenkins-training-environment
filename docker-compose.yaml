@@ -1,0 +1,14 @@
+version: '3'
+services:
+    jenkins:
+        image: jenkins/jenkins:lts-jdk11
+        hostname: jenkins
+        container_name: jenkins
+        ports:
+           - "8080:8080"
+           - "50000:50000"
+             #        environment:
+             #            ZOOKEEPER_CLIENT_PORT: 2181
+             #            ZOOKEEPER_TICK_TIME: 2000
+        volumes:
+           - $PWD/jenkins_home:/var/jenkins_home
